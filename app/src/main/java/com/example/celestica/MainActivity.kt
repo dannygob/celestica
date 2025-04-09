@@ -1,4 +1,4 @@
-package com.celestica
+package com.example.celestica
 
 import android.os.Bundle
 import android.util.Log
@@ -45,7 +45,6 @@ class MainActivity : ComponentActivity(), CameraBridgeViewBase.CvCameraViewListe
         AndroidView(
             factory = { context ->
                 JavaCameraView(context).apply {
-                    visibility = JavaCameraView.VISIBLE
                     setCvCameraViewListener(this@MainActivity)
                 }
             },
@@ -98,23 +97,26 @@ class MainActivity : ComponentActivity(), CameraBridgeViewBase.CvCameraViewListe
 
     private fun detectHoles(frame: Mat, gray: Mat) {
         val circles = Mat()
+
+        // Ajuste de parámetros para HoughCircles
         Imgproc.HoughCircles(
-            gray, circles, Imgproc.CV_HOUGH_GRADIENT, 1.0, gray.rows() / 8.0,
-            100.0, 30.0, 10, 50 // Ajusta estos parámetros para tu caso
+            gray, circles, Imgproc.CV_HOUGH_GRADIENT, 1.0, gray.rows() / 4.0,
+            100.0, 30.0, 10, 50 // Estos parámetros pueden necesitar ajustes según tu caso
         )
 
-        for (i in 0 until circles.cols()) {
-            val data = circles.get(0, i)
-            val center = Point(data[0], data[1])
-            val radius = data[2].toInt()
+        if (circles.cols() > 0) {
+            for (i in 0 until circles.cols()) {
+                val data = circles.get(0, i)
+                val center = Point(data[0], data[1])
+                val radius = data[2].toInt()
 
-            // Dibujar cada agujero
-            Imgproc.circle(frame, center, radius, Scalar(0.0, 255.0, 0.0), 2) // Verde
-            Imgproc.circle(frame, center, 3, Scalar(0.0, 0.0, 255.0), 2) // Rojo
+                // Dibujar cada agujero
+                Imgproc.circle(frame, center, radius, Scalar(0.0, 255.0, 0.0), 2) // Verde
+                Imgproc.circle(frame, center, 3, Scalar(0.0, 0.0, 255.0), 2) // Rojo
 
-            val diameter = radius * 2
-            Log.d("Hole", "Centro: $center, Diámetro: $diameter px")
+                val diameter = radius * 2
+                Log.d("Hole", "Centro: $center, Diámetro: $diametro px")
+            }
         }
     }
 }
-
