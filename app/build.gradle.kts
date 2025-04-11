@@ -2,6 +2,10 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    // Configuración de los plugins para el proyecto
+    id("com.android.application") version "8.0.0" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.24" apply false
+    id("org.jetbrains.kotlin.compose") version "1.4.0" apply false
 }
 
 android {
@@ -27,6 +31,14 @@ android {
             )
         }
     }
+
+    buildscript {
+        repositories {
+            google()
+            mavenCentral()
+        }
+
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -52,10 +64,15 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    implementation (libs.kotlin.stdlib)
+    implementation (libs.androidx.lifecycle.runtime.ktx)
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
+
+
 
     //open cv
     implementation (libs.opencv.android)
@@ -69,6 +86,9 @@ dependencies {
     implementation (libs.androidx.ui.v130)
     implementation (libs.androidx.material3.v110)
     implementation (libs.androidx.ui.tooling.preview.v130)
+
+    // Navigation Compose
+    implementation(libs.androidx.navigation.compose)
 
 
 

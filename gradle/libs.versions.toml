@@ -1,17 +1,21 @@
 [versions]
 activityComposeVersion = "1.6.0"
 agp = "8.9.1"
+gradle = "8.0.0"
 kotlin = "2.0.21"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
+kotlinGradlePlugin = "1.8.0"
+kotlinStdlib = "2.1.20"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "+"
 composeBom = "2024.09.00"
 lifecycleRuntimeKtxVersion = "2.5.1"
 material3 = "1.3.0"
 material3Version = "1.1.0"
+navigationCompose = "2.7.7"
 opencvAndroid = "4.5.1"
 ui = "1.7.0"
 uiToolingPreview = "1.7.0"
@@ -23,8 +27,10 @@ androidx-activity-compose-v160 = { module = "androidx.activity:activity-compose"
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-lifecycle-runtime-ktx-v251 = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtxVersion" }
 androidx-material3-v110 = { module = "androidx.compose.material3:material3", version.ref = "material3Version" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-ui-tooling-preview-v130 = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "uiToolingPreviewVersion" }
 androidx-ui-v130 = { module = "androidx.compose.ui:ui", version.ref = "uiVersion" }
+gradle = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -38,6 +44,8 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlinGradlePlugin" }
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlinStdlib" }
 material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
 opencv-android = { module = "org.opencv:opencv-android", version.ref = "opencvAndroid" }
 ui = { module = "androidx.compose.ui:ui", version.ref = "ui" }
