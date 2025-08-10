@@ -7,7 +7,7 @@
     <string name="welcome_message">Bienvenido al detector celestial</string>
     <string name="scan_button">Escanear componente</string>
     <string name="report_issue">Reportar problema</string>
-    <string name="loading">Cargando...</string>
+    <string name="loading">Cargando…</string>
     <string name="status_passed">Pieza aprobada</string>
     <string name="status_warning">Revisión recomendada</string>
     <string name="status_failed">Fallo crítico</string>
@@ -27,4 +27,5 @@
     <string name="toastOpenDetails">Abriendo detalles...</string>
     <string name="viewHistory">Ver Historial</string>
     <string name="languageSettingHint">La configuración de idioma se puede cambiar en los ajustes del sistema.</string>
+
 </resources>

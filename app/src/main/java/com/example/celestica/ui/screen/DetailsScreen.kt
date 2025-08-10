@@ -44,7 +44,7 @@ fun DetailsScreen(
         }
     }
 
-    val trazabilidadResult by detailsViewModel.trazabilidadItem.collectAsState()
+    val trazabilidadResult by detailsViewModel.trazabilityItem.collectAsState()
     val features by detailsViewModel.features.collectAsState()
     val useInches by sharedViewModel.useInches.collectAsState()
 

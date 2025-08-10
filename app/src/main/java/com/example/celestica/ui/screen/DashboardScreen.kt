@@ -10,8 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.*
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.celestic.util.*
-import com.example.celestic.utils.generateCsvFromDetections
+import com.example.celestic.utils.*
+import com.example.celestica.models.DetectionItem
 import com.example.celestica.navigation.NavigationRoutes
 import com.example.celestica.utils.LocalizedStrings
 import com.example.celestica.utils.exportJsonSummary
@@ -149,10 +149,25 @@ fun DashboardScreen(
                         val detecciones = viewModel.detections.value
 
                         val archivo = when (formatoSeleccionado) {
-                            "PDF" -> generatePdfFromDetections(context, detecciones, loteId)
-                            "Word" -> generateWordFromDetections(context, detecciones, loteId)
-                            "JSON" -> exportJsonSummary(context, detecciones, loteId)
-                            "CSV" -> generateCsvFromDetections(context, detecciones, loteId)
+                            "PDF" -> generatePdfFromDetections(
+                                context,
+                                detecciones as List<DetectionItem>, loteId
+                            )
+
+                            "Word" -> generateWordFromDetections(
+                                context,
+                                detecciones as List<DetectionItem>, loteId
+                            )
+
+                            "JSON" -> exportJsonSummary(
+                                context,
+                                detecciones as List<DetectionItem>, loteId
+                            )
+
+                            "CSV" -> generateCsvFromDetections(
+                                context,
+                                detecciones as List<DetectionItem>, loteId
+                            )
                             else -> null
                         }
 

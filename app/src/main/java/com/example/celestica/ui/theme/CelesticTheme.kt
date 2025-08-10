@@ -40,7 +40,7 @@ fun CelesticTheme(
     MaterialTheme(
         colorScheme = colors,
         typography = Typography,
-        shapes = CelesticShapes,
+        shapes = CelesticaShapes,
         content = content
     )
 }

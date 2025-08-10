@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.celestica.data.repository.DetectionRepository
-import com.example.celestica.models.TrazabilidadItem
+import com.example.celestica.models.TrazabilityItem
 import com.example.celestica.models.calibration.DetectedFeature
 import com.example.celestica.utils.Result
 import com.example.celestica.utils.buscarPorCodigo
@@ -22,8 +22,8 @@ class DetailsViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
 ) : ViewModel() {
 
-    private val _trazabilidadItem = MutableStateFlow<Result<TrazabilidadItem?>>(Result.Loading)
-    val trazabilidadItem: StateFlow<Result<TrazabilidadItem?>> = _trazabilidadItem
+    private val _trazabilityItem = MutableStateFlow<Result<TrazabilityItem?>>(Result.Loading)
+    val trazabilityItem: StateFlow<Result<TrazabilityItem?>> = _trazabilityItem
 
     private val _features =
         MutableStateFlow<List<DetectedFeature>>(emptyList())
@@ -34,9 +34,9 @@ class DetailsViewModel @Inject constructor(
         viewModelScope.launch {
             try {
                 val lista = cargarTrazabilidadDesdeJson(context)
-                _trazabilidadItem.value = Result.Success(buscarPorCodigo(codigo, lista))
+                _trazabilityItem.value = Result.Success(buscarPorCodigo(codigo, lista))
             } catch (e: Exception) {
-                _trazabilidadItem.value = Result.Error(e)
+                _trazabilityItem.value = Result.Error(e)
             }
         }
     }

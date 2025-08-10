@@ -7,6 +7,7 @@ import android.graphics.Bitmap
 import androidx.camera.core.ImageProxy
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.createBitmap
 import com.google.common.util.concurrent.ListenableFuture
 import org.opencv.android.Utils
 import org.opencv.core.CvType
@@ -25,7 +26,7 @@ fun imageProxyToBitmap(image: ImageProxy): Bitmap {
     val rgbMat = Mat()
     Imgproc.cvtColor(yuvMat, rgbMat, Imgproc.COLOR_YUV2RGB_NV21)
 
-    val bmp = Bitmap.createBitmap(rgbMat.cols(), rgbMat.rows(), Bitmap.Config.ARGB_8888)
+    val bmp = createBitmap(rgbMat.cols(), rgbMat.rows())
     Utils.matToBitmap(rgbMat, bmp)
 
     yuvMat.release()
