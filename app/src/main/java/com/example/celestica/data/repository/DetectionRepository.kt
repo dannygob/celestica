@@ -1,8 +1,12 @@
-package com.example.celestic.data.repository
+package com.example.celestica.data.repository
 
-import com.example.celestic.data.dao.CelesticDao
-import com.example.celestic.models.DetectionItem
-import com.example.celestic.models.calibration.DetectedFeature
+import com.example.celestica.data.dao.CelesticDao
+import com.example.celestica.models.DetectionItem
+import com.example.celestica.models.Inspection
+import com.example.celestica.models.calibration.CameraCalibrationData
+import com.example.celestica.models.calibration.DetectedFeature
+import com.example.celestica.models.report.ReportConfig
+import kotlinx.coroutines.flow.Flow
 
 class DetectionRepository(private val dao: CelesticDao) {
 
@@ -14,7 +18,7 @@ class DetectionRepository(private val dao: CelesticDao) {
         dao.insertDetections(detections)
     }
 
-    fun loadDetections(): kotlinx.coroutines.flow.Flow<List<DetectedFeature>> {
+    fun loadDetections(): Flow<List<DetectedFeature>> {
         return dao.getAllDetections()
     }
 
@@ -26,37 +30,37 @@ class DetectionRepository(private val dao: CelesticDao) {
 
     suspend fun deleteDetection(item: DetectionItem) = dao.delete(item)
 
-    suspend fun insertCameraCalibrationData(cameraCalibrationData: com.example.celestic.models.calibration.CameraCalibrationData) {
+    suspend fun insertCameraCalibrationData(cameraCalibrationData: CameraCalibrationData) {
         dao.insertCameraCalibrationData(cameraCalibrationData)
     }
 
-    fun getCameraCalibrationData(): kotlinx.coroutines.flow.Flow<com.example.celestic.models.calibration.CameraCalibrationData?> {
+    fun getCameraCalibrationData(): Flow<CameraCalibrationData?> {
         return dao.getCameraCalibrationData()
     }
 
-    suspend fun insertReportConfig(reportConfig: com.example.celestic.models.report.ReportConfig) {
+    suspend fun insertReportConfig(reportConfig: ReportConfig) {
         dao.insertReportConfig(reportConfig)
     }
 
-    fun getReportConfig(): kotlinx.coroutines.flow.Flow<com.example.celestic.models.report.ReportConfig?> {
+    fun getReportConfig(): Flow<ReportConfig?> {
         return dao.getReportConfig()
     }
 
-    fun getAll(): kotlinx.coroutines.flow.Flow<List<DetectionItem>> {
+    fun getAll(): Flow<List<DetectionItem>> {
         return dao.getAll()
     }
 
-    fun getFeaturesForDetection(detectionItemId: Long): kotlinx.coroutines.flow.Flow<List<DetectedFeature>> {
+    fun getFeaturesForDetection(detectionItemId: Long): Flow<List<DetectedFeature>> {
         return dao.getFeaturesForDetection(detectionItemId)
     }
 
     suspend fun startInspection(): Long {
         val inspection =
-            com.example.celestic.models.Inspection(timestamp = System.currentTimeMillis())
+            Inspection(timestamp = System.currentTimeMillis())
         return dao.insertInspection(inspection)
     }
 
-    fun getAllInspections(): kotlinx.coroutines.flow.Flow<List<com.example.celestic.models.Inspection>> {
+    fun getAllInspections(): Flow<List<Inspection>> {
         return dao.getAllInspections()
     }
 }

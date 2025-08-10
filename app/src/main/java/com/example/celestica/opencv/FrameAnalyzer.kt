@@ -1,11 +1,11 @@
-package com.example.celestic.opencv
+package com.example.celestica.opencv
 
 import android.util.Log
 import androidx.compose.ui.geometry.Size
-import com.example.celestic.manager.AprilTagManager
-import com.example.celestic.manager.ArUcoManager
-import com.example.celestic.viewmodel.MarkerType
-import com.example.celestic.viewmodel.SharedViewModel
+import com.example.celestica.manager.AprilTagManager
+import com.example.celestica.manager.ArUcoManager
+import com.example.celestica.viewmodel.MarkerType
+import com.example.celestica.viewmodel.SharedViewModel
 import org.opencv.aruco.Aruco
 import org.opencv.core.CvType
 import org.opencv.core.Mat

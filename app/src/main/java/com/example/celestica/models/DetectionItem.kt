@@ -1,21 +1,23 @@
-package com.example.celestic.models
+package com.example.celestica.models
 
 import android.os.Parcelable
 import androidx.room.Embedded
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import com.example.celestic.models.enums.DetectionStatus
-import com.example.celestic.models.enums.DetectionType
+import com.example.celestica.models.enums.DetectionStatus
+import com.example.celestica.models.enums.DetectionType
+import com.example.celestica.models.geometry.BoundingBox
 import kotlinx.parcelize.Parcelize
 
 @Entity(
     tableName = "detection_items",
     foreignKeys = [
-        androidx.room.ForeignKey(
+        ForeignKey(
             entity = Inspection::class,
             parentColumns = ["id"],
             childColumns = ["inspectionId"],
-            onDelete = androidx.room.ForeignKey.CASCADE
+            onDelete = ForeignKey.CASCADE
         )
     ]
 )
@@ -25,7 +27,7 @@ data class DetectionItem(
     val inspectionId: Long,
     val frameId: String,
     val type: DetectionType,
-    @Embedded val boundingBox: com.example.celestic.models.geometry.BoundingBox,
+    @Embedded val boundingBox: BoundingBox,
     val confidence: Float,
     val status: DetectionStatus,
     val measurementMm: Float? = null,

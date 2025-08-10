@@ -1,12 +1,15 @@
-package com.example.celestic.data.dao
+package com.example.celestica.data.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.celestic.models.DetectionItem
-import com.example.celestic.models.calibration.DetectedFeature
+import com.example.celestica.models.DetectionItem
+import com.example.celestica.models.Inspection
+import com.example.celestica.models.calibration.CameraCalibrationData
+import com.example.celestica.models.calibration.DetectedFeature
+import com.example.celestica.models.report.ReportConfig
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -33,23 +36,23 @@ interface CelesticDao {
     suspend fun clearDetections()
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCameraCalibrationData(cameraCalibrationData: com.example.celestic.models.calibration.CameraCalibrationData)
+    suspend fun insertCameraCalibrationData(cameraCalibrationData: CameraCalibrationData)
 
     @Query("SELECT * FROM camera_calibration ORDER BY id DESC LIMIT 1")
-    fun getCameraCalibrationData(): Flow<com.example.celestic.models.calibration.CameraCalibrationData?>
+    fun getCameraCalibrationData(): Flow<CameraCalibrationData?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertReportConfig(reportConfig: com.example.celestic.models.report.ReportConfig)
+    suspend fun insertReportConfig(reportConfig: ReportConfig)
 
     @Query("SELECT * FROM report_config ORDER BY id DESC LIMIT 1")
-    fun getReportConfig(): Flow<com.example.celestic.models.report.ReportConfig?>
+    fun getReportConfig(): Flow<ReportConfig?>
 
     @Query("SELECT * FROM detected_features WHERE detectionItemId = :detectionItemId")
     fun getFeaturesForDetection(detectionItemId: Long): Flow<List<DetectedFeature>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertInspection(inspection: com.example.celestic.models.Inspection): Long
+    suspend fun insertInspection(inspection: Inspection): Long
 
     @Query("SELECT * FROM inspections ORDER BY timestamp DESC")
-    fun getAllInspections(): Flow<List<com.example.celestic.models.Inspection>>
+    fun getAllInspections(): Flow<List<Inspection>>
 }

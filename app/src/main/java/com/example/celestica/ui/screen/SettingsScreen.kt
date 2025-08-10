@@ -1,4 +1,4 @@
-package com.example.celestic.ui.screen
+package com.example.celestica.ui.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -14,8 +14,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.example.celestic.viewmodel.MarkerType
-import com.example.celestic.viewmodel.SharedViewModel
+import com.example.celestica.viewmodel.MarkerType
+import com.example.celestica.viewmodel.SharedViewModel
 
 @Composable
 fun SettingsScreen(

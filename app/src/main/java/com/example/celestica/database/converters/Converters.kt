@@ -1,9 +1,9 @@
-package com.example.celestic.database.converters
+package com.example.celestica.database.converters
 
 import androidx.room.TypeConverter
-import com.example.celestic.models.enums.DetectionStatus
-import com.example.celestic.models.enums.DetectionType
-import com.example.celestic.models.geometry.BoundingBox
+import com.example.celestica.models.enums.DetectionStatus
+import com.example.celestica.models.enums.DetectionType
+import com.example.celestica.models.geometry.BoundingBox
 import com.google.gson.Gson
 
 class Converters {

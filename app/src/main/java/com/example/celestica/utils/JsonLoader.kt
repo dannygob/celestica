@@ -1,9 +1,9 @@
-package com.example.celestic.utils
+package com.example.celestica.utils
 
 import android.content.Context
-import com.example.celestic.models.TrazabilidadItem
-import com.google.firebase.crashlytics.buildtools.reloc.com.google.common.reflect.TypeToken
+import com.example.celestica.models.TrazabilidadItem
 import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
 
 fun cargarTrazabilidadDesdeJson(context: Context): List<TrazabilidadItem> {

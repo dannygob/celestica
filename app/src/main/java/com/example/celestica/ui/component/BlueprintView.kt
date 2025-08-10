@@ -1,4 +1,4 @@
-package com.example.celestic.ui.component
+package com.example.celestica.ui.component
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
@@ -13,7 +13,7 @@ import androidx.compose.ui.text.drawText
 
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.celestic.models.calibration.DetectedFeature
+import com.example.celestica.models.calibration.DetectedFeature
 
 @Composable
 fun BlueprintView(features: List<DetectedFeature>, useInches: Boolean = false) {

@@ -1,4 +1,4 @@
-package com.example.celestic.ui.screen
+package com.example.celestica.ui.screen
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button

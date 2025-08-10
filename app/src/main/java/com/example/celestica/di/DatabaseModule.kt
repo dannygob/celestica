@@ -1,8 +1,8 @@
-package com.example.celestic.di
+package com.example.celestica.di
 
 import android.content.Context
-import com.example.celestic.data.dao.CelesticDao
-import com.example.celestic.database.CelesticDatabase
+import com.example.celestica.data.dao.CelesticDao
+import com.example.celestica.database.CelesticDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

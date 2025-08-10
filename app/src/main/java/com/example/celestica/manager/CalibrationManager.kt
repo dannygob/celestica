@@ -1,4 +1,4 @@
-package com.example.celestic.manager
+package com.example.celestica.manager
 
 
 import android.content.Context

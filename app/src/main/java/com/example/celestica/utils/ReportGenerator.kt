@@ -1,7 +1,7 @@
 package com.example.celestic.utils
 
 import android.content.Context
-import com.example.celestic.models.DetectionItem
+import com.example.celestica.models.DetectionItem
 import com.itextpdf.kernel.pdf.PdfDocument
 import com.itextpdf.kernel.pdf.PdfWriter
 import com.itextpdf.layout.Document

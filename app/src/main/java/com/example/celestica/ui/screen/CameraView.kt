@@ -1,4 +1,4 @@
-package com.example.celestic.ui.screen
+package com.example.celestica.ui.screen
 
 
 import android.Manifest
@@ -22,9 +22,9 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.celestic.manager.ImageClassifier
-import com.example.celestic.utils.OpenCVInitializer
-import com.example.celestic.viewmodel.MainViewModel
+import com.example.celestica.manager.ImageClassifier
+import com.example.celestica.utils.OpenCVInitializer
+import com.example.celestica.viewmodel.MainViewModel
 import org.opencv.android.Utils
 import org.opencv.core.CvType
 import org.opencv.core.Mat

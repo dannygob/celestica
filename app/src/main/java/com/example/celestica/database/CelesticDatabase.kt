@@ -1,19 +1,20 @@
-package com.example.celestic.database
+package com.example.celestica.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.celestic.data.dao.CelesticDao
-import com.example.celestic.database.converters.Converters
-import com.example.celestic.models.DetectionItem
-import com.example.celestic.models.calibration.CameraCalibrationData
-import com.example.celestic.models.calibration.DetectedFeature
-import com.example.celestic.models.report.ReportConfig
+import com.example.celestica.data.dao.CelesticDao
+import com.example.celestica.database.converters.Converters
+import com.example.celestica.models.DetectionItem
+import com.example.celestica.models.Inspection
+import com.example.celestica.models.calibration.CameraCalibrationData
+import com.example.celestica.models.calibration.DetectedFeature
+import com.example.celestica.models.report.ReportConfig
 
 @Database(
-    entities = [DetectionItem::class, DetectedFeature::class, CameraCalibrationData::class, ReportConfig::class, com.example.celestic.models.Inspection::class],
+    entities = [DetectionItem::class, DetectedFeature::class, CameraCalibrationData::class, ReportConfig::class, Inspection::class],
     version = 2,
     exportSchema = false
 )

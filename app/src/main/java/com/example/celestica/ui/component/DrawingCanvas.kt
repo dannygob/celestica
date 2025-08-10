@@ -1,4 +1,4 @@
-package com.example.celestic.ui.component
+package com.example.celestica.ui.component
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,7 +8,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.celestic.models.calibration.DetectedFeature
+import com.example.celestica.models.calibration.DetectedFeature
 
 @Composable
 fun DrawingCanvas(features: List<DetectedFeature>) {

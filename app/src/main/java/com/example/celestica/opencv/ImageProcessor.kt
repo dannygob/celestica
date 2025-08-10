@@ -1,6 +1,6 @@
-package com.example.celestic.opencv
+package com.example.celestica.opencv
 
-import com.example.celestic.models.DetectionItem
+import com.example.celestica.models.DetectionItem
 import org.opencv.core.Mat
 
 object ImageProcessor {

@@ -1,4 +1,4 @@
-package com.example.celestic.ui.screen
+package com.example.celestica.ui.screen
 
 import android.widget.Toast
 import androidx.compose.animation.AnimatedVisibility
@@ -13,10 +13,11 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.example.celestic.models.DetectionItem
-import com.example.celestic.ui.component.BlueprintView
-import com.example.celestic.viewmodel.DetailsViewModel
-import com.example.celestic.viewmodel.SharedViewModel
+import com.example.celestica.models.DetectionItem
+import com.example.celestica.ui.component.BlueprintView
+import com.example.celestica.utils.Result
+import com.example.celestica.viewmodel.DetailsViewModel
+import com.example.celestica.viewmodel.SharedViewModel
 
 @Composable
 fun DetailsScreen(
@@ -67,11 +68,11 @@ fun DetailsScreen(
         Spacer(modifier = Modifier.height(16.dp))
 
         AnimatedVisibility(
-            visible = trazabilidadResult is com.example.celestic.utils.Result.Success,
+            visible = trazabilidadResult is Result.Success,
             enter = fadeIn(animationSpec = tween(durationMillis = 1000))
         ) {
             val trazabilidad =
-                (trazabilidadResult as com.example.celestic.utils.Result.Success).data
+                (trazabilidadResult as Result.Success).data
             trazabilidad?.let {
                 Divider()
                 Text("🔍 Trazabilidad:", style = MaterialTheme.typography.titleMedium)
@@ -83,11 +84,11 @@ fun DetailsScreen(
             } ?: Text("❌ No hay información de trazabilidad.")
         }
 
-        if (trazabilidadResult is com.example.celestic.utils.Result.Loading) {
+        if (trazabilidadResult is Result.Loading) {
             CircularProgressIndicator()
         }
 
-        if (trazabilidadResult is com.example.celestic.utils.Result.Error) {
+        if (trazabilidadResult is Result.Error) {
             Text("❌ Error al cargar la información de trazabilidad.")
         }
 

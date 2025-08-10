@@ -1,4 +1,4 @@
-package com.example.celestic.navigation
+package com.example.celestica.navigation
 
 object NavRoutes {
     const val DASHBOARD = "dashboard"

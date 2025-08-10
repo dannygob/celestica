@@ -1,4 +1,4 @@
-package com.example.celestic.models.calibration
+package com.example.celestica.models.calibration
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo

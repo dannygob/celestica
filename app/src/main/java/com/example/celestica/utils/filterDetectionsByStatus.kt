@@ -1,9 +1,10 @@
-package com.example.celestic.utils
+package com.example.celestica.utils
 
 
 import android.content.Context
 import android.os.Environment
-import com.example.celestic.models.DetectionItem
+import com.example.celestica.models.DetectionItem
+import com.example.celestica.models.enums.DetectionStatus
 import com.google.gson.Gson
 import org.apache.poi.xwpf.usermodel.XWPFDocument
 import java.io.File
@@ -11,7 +12,7 @@ import java.io.FileOutputStream
 
 fun filterDetectionsByStatus(
     detections: List<DetectionItem>,
-    status: com.example.celestic.models.enums.DetectionStatus,
+    status: DetectionStatus,
 ): List<DetectionItem> = detections.filter { it.status == status }
 
 fun exportJsonSummary(context: Context, detections: List<DetectionItem>, loteId: String): File {

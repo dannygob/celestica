@@ -1,11 +1,11 @@
-package com.example.celestic.ui.preview
+package com.example.celestica.ui.preview
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.example.celestic.models.DetectionItem
-import com.example.celestic.models.enums.DetectionStatus
-import com.example.celestic.models.enums.DetectionType
-import com.example.celestic.models.geometry.BoundingBox
+import com.example.celestica.models.DetectionItem
+import com.example.celestica.models.enums.DetectionStatus
+import com.example.celestica.models.enums.DetectionType
+import com.example.celestica.models.geometry.BoundingBox
 
 @Composable
 fun DetectionItemPreview() {

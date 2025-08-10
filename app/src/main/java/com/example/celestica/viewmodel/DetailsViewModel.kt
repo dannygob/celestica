@@ -1,13 +1,14 @@
-package com.example.celestic.viewmodel
+package com.example.celestica.viewmodel
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.celestic.data.repository.DetectionRepository
-import com.example.celestic.models.TrazabilidadItem
-import com.example.celestic.utils.Result
-import com.example.celestic.utils.buscarPorCodigo
-import com.example.celestic.utils.cargarTrazabilidadDesdeJson
+import com.example.celestica.data.repository.DetectionRepository
+import com.example.celestica.models.TrazabilidadItem
+import com.example.celestica.models.calibration.DetectedFeature
+import com.example.celestica.utils.Result
+import com.example.celestica.utils.buscarPorCodigo
+import com.example.celestica.utils.cargarTrazabilidadDesdeJson
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,8 +26,8 @@ class DetailsViewModel @Inject constructor(
     val trazabilidadItem: StateFlow<Result<TrazabilidadItem?>> = _trazabilidadItem
 
     private val _features =
-        MutableStateFlow<List<com.example.celestic.models.calibration.DetectedFeature>>(emptyList())
-    val features: StateFlow<List<com.example.celestic.models.calibration.DetectedFeature>> =
+        MutableStateFlow<List<DetectedFeature>>(emptyList())
+    val features: StateFlow<List<DetectedFeature>> =
         _features
 
     fun loadTrazabilidad(codigo: String) {

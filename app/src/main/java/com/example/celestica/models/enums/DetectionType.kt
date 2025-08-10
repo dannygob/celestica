@@ -1,4 +1,4 @@
-package com.example.celestic.models.enums
+package com.example.celestica.models.enums
 
 
 enum class DetectionType {

@@ -1,7 +1,7 @@
-package com.example.celestic.di
+package com.example.celestica.di
 
-import com.example.celestic.data.dao.CelesticDao
-import com.example.celestic.data.repository.DetectionRepository
+import com.example.celestica.data.dao.CelesticDao
+import com.example.celestica.data.repository.DetectionRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,4 +1,4 @@
-package com.example.celestic.viewmodel
+package com.example.celestica.viewmodel
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
