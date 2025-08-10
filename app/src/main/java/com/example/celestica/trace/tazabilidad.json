@@ -1,0 +1,13 @@
+{
+  "codigo": "QR_456XYZ",
+  "pieza": "Soporte-A",
+  "lote": "Lote_20250727",
+  "ordenFabricacion": "OF_1193",
+  "fechaInspeccion": "2025-07-27T14:32:12Z",
+  "resultado": "WARNING",
+  "medidasDetectadas": [
+    4.2,
+    5.8
+  ],
+  "notas": "Avellanado fuera de tolerancia"
+}

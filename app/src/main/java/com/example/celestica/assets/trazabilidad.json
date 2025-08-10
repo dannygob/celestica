@@ -1,0 +1,16 @@
+[
+  {
+    "codigo": "QR123456",
+    "pieza": "Panel A",
+    "operario": "Juan Pérez",
+    "fecha": "2025-07-27",
+    "resultado": "Curvatura irregular"
+  },
+  {
+    "codigo": "ARUCO_04",
+    "pieza": "Conector Z",
+    "operario": "Lucía Gómez",
+    "fecha": "2025-07-26",
+    "resultado": "Pieza sin defecto"
+  }
+]

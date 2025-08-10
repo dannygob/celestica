@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_padding">16dp</dimen>
+    <dimen name="element_spacing">12dp</dimen>
+    <dimen name="icon_size">24dp</dimen>
+    <dimen name="large_text">18sp</dimen>
+    <dimen name="medium_text">14sp</dimen>
+    <dimen name="small_text">12sp</dimen>
+
+
+</resources>
